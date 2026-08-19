@@ -4,7 +4,7 @@
 # In[ ]:
 
 
-from Random numbers generator with notes import random_numbers_generator
+from RNgenerator import random_numbers_generator
 from Simulator with notes import GBM
 from Pricer with notes import LSPricer
 
