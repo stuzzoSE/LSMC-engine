@@ -5,8 +5,8 @@
 
 
 from RNgenerator import random_numbers_generator
-from Simulator with notes import GBM
-from Pricer with notes import LSPricer
+from Simulator import GBM
+from Pricer import LSPricer
 
 #Setting Parameters
 S_0=100
@@ -20,11 +20,11 @@ d_t=T/N
 
 Z = random_numbers_generator(n_simulations ,N ,mode = "Normal")
 
-S_full = GBM(S_0 , r ,sigma ,T ,N ,n_simulations ,z=Z)
+S_full = GBM(S_0 , r ,T ,N ,n_simulations ,z=Z)
 
-American_C = LSPricer(S_full ,d_t ,sigma ,r ,T ,K ,mode = "Call")
-American_P = LSPricer(S_full ,d_t ,sigma ,r ,T ,K ,mode = "Put")
+American_C = LSPricer(S_full ,d_t ,r ,sigma ,K ,N ,mode = "Call")
+American_P = LSPricer(S_full ,d_t ,r ,sigma ,K ,N ,mode = "Put")
 
-print ("American Call Option =",f"{American_C:.3F}",
-       "American Put Option =",f"{American_P:.3F}")
+print ("American Call Option =",f"{American_C:.3f}",
+       "American Put Option =",f"{American_P:.3f}")
 

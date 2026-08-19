@@ -5,7 +5,6 @@
 
 
 import numpy as np
-from scipy.stats import qmc , norm
 
 def GBM(S_0 , r ,sigma ,T ,N ,n_simulations ,z):
     d_t =  T/N

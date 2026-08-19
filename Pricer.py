@@ -6,7 +6,7 @@
 
 import numpy as np
 
-def LSPricer(S_full ,d_t ,sigma ,r ,T ,K ,mode = "Call"):
+def LSPricer(S_full ,d_t ,r ,K ,N ,mode = "Call"):
     if mode == "Call":
         C = np.maximum(S_full[:, -1] - K, 0) 
     elif mode == "Put":                      # Creates the C payoff array depending on mode
