@@ -30,6 +30,7 @@ A quantitative framework for pricing American-style options and calculating risk
 └── requirements.txt   # Project dependencies (numpy, scipy, arch, yfinance)
 
 ```
+---
 
 ## Quick Start
 
@@ -82,6 +83,8 @@ for model, res in results.items():
         g = res[opt_type]
         print(f"{model:<8} | {opt_type:<5} | ${g['Base Price']:<6.3f} | {g['Delta']:<7.4f} | {g['Gamma']:<7.4f} | {g['Vega']:<7.4f}")
 ```
+---
+
 ```text
 Sample Execution Output======================================================================
 Model    | Option | Price   | Delta   | Gamma   | Vega   
@@ -93,5 +96,12 @@ IV       | Put    | $7.102  | -0.4901 | 0.0220  | 19.0800
 GARCH    | Call   | $3.290  | 0.4910  | 0.0218  | 18.8200
 GARCH    | Put    | $7.280  | -0.5011 | 0.0219  | 18.7900
 ```
-#Numerical Engineering & Stability HighlightsOrthogonal Fits: Employs numpy.polynomial.Polynomial.fit on rescaled asset paths ($S_t / K$), which automatically scales the domain to $[-1, 1]$ to eliminate matrix rank warnings and numerical precision loss during regression.Sparse Path Handling: Automatically detects time steps where in-the-money path counts drop to $\le 2$, skipping full regression to directly evaluate immediate payoff versus discounted cash flow.Common Random Numbers (CRN): Reuses identical random path matrices $Z$ across base and perturbed states ($\Delta S$, $\Delta \sigma$), isolating true derivative sensitivities without Monte Carlo variance dominating the signal.Future ExtensionsStochastic Volatility: Expand path simulation to include Heston dynamics to capture volatility smile/skew.Surface Calibration: Implement parameter optimization to calibrate local/stochastic volatility models directly against live option chains
+## Numerical Engineering & Stability Highlights
+* **Orthogonal Fits: Employs numpy.polynomial.Polynomial.fit on rescaled asset paths ($S_t / K$), which automatically scales the domain to $[-1, 1]$ to eliminate matrix rank warnings and numerical precision loss during regression.
+* **Sparse Path Handling: Automatically detects time steps where in-the-money path counts drop to $\le 2$, skipping full regression to directly evaluate immediate payoff versus discounted cash flow.
+* **Common Random Numbers (CRN): Reuses identical random path matrices $Z$ across base and perturbed states ($\Delta S$, $\Delta \sigma$), isolating true derivative sensitivities without Monte Carlo variance dominating the signal.
+
+## Future Extensions
+* **Stochastic Volatility: Expand path simulation to include Heston dynamics to capture volatility smile/skew.
+* **Surface Calibration: Implement parameter optimization to calibrate local/stochastic volatility models directly against live option chains
 
