@@ -1,5 +1,5 @@
 ```python
-Markdown# American Option Pricing & Risk Engine
+# American Option Pricing & Risk Engine
 
 A quantitative framework for pricing American-style options and calculating risk sensitivities (Greeks). The engine combines the **Longstaff-Schwartz Least-Squares Monte Carlo (LSM)** algorithm with numerical stability enhancements, multi-measure volatility estimation ($\mathbb{P}$ vs. $\mathbb{Q}$), and custom random number generation.
 
