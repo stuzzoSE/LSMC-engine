@@ -1,4 +1,3 @@
-```python
 # American Option Pricing & Risk Engine
 
 A quantitative framework for pricing American-style options and calculating risk sensitivities (Greeks). The engine combines the **Longstaff-Schwartz Least-Squares Monte Carlo (LSM)** algorithm with numerical stability enhancements, multi-measure volatility estimation ($\mathbb{P}$ vs. $\mathbb{Q}$), and custom random number generation.
@@ -18,10 +17,10 @@ A quantitative framework for pricing American-style options and calculating risk
 ---
 
 ## Repository Structure
-
+```python
 ├── RNGenerator.py     # Custom RNG engine (Normal, Sobol, Antithetic)├── Simulator.py       # Geometric Brownian Motion path generator├── Pricer.py          # Longstaff-Schwartz (LSM) pricing engine├── Volatility.py      # Rolling Vol, GARCH(1,1), and Brent's IV├── DataFetch.py       # Market data and option chain puller├── Greeks.py          # Finite Difference Greeks calculator using CRN├── main.py            # Execution pipeline & results runner└── requirements.txt   # Project dependencies (numpy, scipy, arch, yfinance)
 ---
-
+```
 ## Quick Start
 
 Execute the complete end-to-end pricing pipeline via `main.py`:
