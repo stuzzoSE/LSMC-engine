@@ -1,0 +1,8 @@
+numpy
+scipy
+pandas
+arch
+yfinancev
+
+#To install them
+pip install -r requirements.txt
