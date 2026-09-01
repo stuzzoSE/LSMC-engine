@@ -6,7 +6,7 @@ A quantitative framework for pricing American-style options and calculating risk
 
 ## Key Features
 
-* **American Option Engine (`Pricer.py`):** Longstaff-Schwartz (LSM) backward induction with degree-2 polynomial regression. Resolves ill-conditioned matrix warnings via domain normalization (`S_t / K`) and in-the-money (ITM) path filtering.
+* **American Option Engine (`Pricer.py`):** Longstaff-Schwartz (LSM) backward induction with degree-2 polynomial regression. Resolves ill-conditioned matrix warnings via domain normalization ($S_t / K$) and in-the-money (ITM) path filtering.
 * **Random Number Generation (`RNGenerator.py`):** Flexible RNG supporting standard Normal draws, Quasi-Monte Carlo (Sobol sequences), and Antithetic Variates for variance reduction.
 * **Volatility Modeling (`Volatility.py`):**
   * **Physical Measure ($\mathbb{P}$):** GARCH(1,1) time-series forecasting and rolling historical volatility.
