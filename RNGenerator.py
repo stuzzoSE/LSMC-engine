@@ -16,7 +16,7 @@ def random_numbers_generator(n_simulations ,N ,mode = "Normal", seed =None):
         z = np.random.normal(0,1,(n_simulations,N)) 
         
     elif mode == "Sobol":
-        sobol = qmc.Sobol(d=N,scramble=True) 
+        sobol = qmc.Sobol(d=N,scramble=True,seed=seed) 
         quasi_random_numbers= sobol.random(n_simulations)
         z= norm.ppf(quasi_random_numbers)
         
@@ -29,6 +29,7 @@ def random_numbers_generator(n_simulations ,N ,mode = "Normal", seed =None):
         raise ValueError(f"Unknown mode: {mode}")
         
     return z
+
 
 
 
