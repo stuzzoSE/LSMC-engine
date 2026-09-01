@@ -18,8 +18,16 @@ A quantitative framework for pricing American-style options and calculating risk
 
 ## Repository Structure
 
-├── RNGenerator.py     # Custom RNG engine (Normal, Sobol, Antithetic)├── Simulator.py       # Geometric Brownian Motion path generator├── Pricer.py          # Longstaff-Schwartz (LSM) pricing engine├── Volatility.py      # Rolling Vol, GARCH(1,1), and Brent's IV├── DataFetch.py       # Market data and option chain puller├── Greeks.py          # Finite Difference Greeks calculator using CRN├── main.py            # Execution pipeline & results runner└── requirements.txt   # Project dependencies (numpy, scipy, arch, yfinance)
----
+```text
+.
+├── RNGenerator.py     # Custom RNG engine (Normal, Sobol, Antithetic)
+├── Simulator.py       # Geometric Brownian Motion path generator
+├── Pricer.py          # Longstaff-Schwartz (LSM) pricing engine
+├── Volatility.py      # Rolling Vol, GARCH(1,1), and Brent's IV
+├── DataFetch.py       # Market data and option chain puller
+├── Greeks.py          # Finite Difference Greeks calculator using CRN
+├── main.py            # Execution pipeline & results runner
+└── requirements.txt   # Project dependencies (numpy, scipy, arch, yfinance)
 
 ## Quick Start
 
@@ -71,7 +79,7 @@ for model, res in results.items():
     for opt_type in ["Call", "Put"]:
         g = res[opt_type]
         print(f"{model:<8} | {opt_type:<5} | ${g['Base Price']:<6.3f} | {g['Delta']:<7.4f} | {g['Gamma']:<7.4f} | {g['Vega']:<7.4f}")
-```
+```text
 Sample Execution Output======================================================================
 Model    | Option | Price   | Delta   | Gamma   | Vega   
 ======================================================================
